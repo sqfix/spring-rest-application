@@ -1,17 +1,14 @@
 package com.service;
 
 import com.dao.UserRepository;
-import com.model.Role;
 import com.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Max on 11.04.2017.
@@ -44,6 +41,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(User user) {
         LOG.info("saveUser (USER)");
+        user.setPassWord(new BCryptPasswordEncoder().encode(user.getPassWord()));
+        LOG.debug("pass encoded: " + user.getPassWord());
         repository.save(user);
     }
 }
