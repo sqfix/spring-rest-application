@@ -14,7 +14,7 @@ import java.util.List;
 @Transactional
 public interface RoleRepository extends CrudRepository<Role, Integer> {
 
-    Role getRoleById(int id);
+    Role findRoleById(int id);
 
     List<Role> findAll();
 

@@ -14,7 +14,7 @@ import java.util.List;
 @Transactional
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-    User getUserById(int id);
+    User findUserById(int id);
 
     List<User> findAll();
 

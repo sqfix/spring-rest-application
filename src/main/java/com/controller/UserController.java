@@ -2,7 +2,6 @@ package com.controller;
 
 import com.model.Role;
 import com.model.User;
-import com.service.RoleService;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -50,7 +49,7 @@ public class UserController {
     }
 
     //INSERT TEST DATA METHOD
-    @RequestMapping(value = "/init2", method = RequestMethod.GET)
+    @RequestMapping(value = "/test/init2", method = RequestMethod.GET)
     private String testInit() {
         User alex = new User("Alex", "pass", false, Collections.emptySet());
         User max = new User("Max", "pass1", false, Collections.emptySet());
@@ -80,7 +79,7 @@ public class UserController {
     }
 
     //FOR A TEST
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping(value = "/test/admin", method = RequestMethod.GET)
     private String admin(){
         return "ADMIN LOGINED";
     }

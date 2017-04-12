@@ -82,7 +82,6 @@ public class User {
         return "id " + id +
                 ", userName " + userName +
                 ", passWord " + passWord +
-                ", isActive " + isActive +
-                ", roles " + roles + "\n";
+                ", isActive " + isActive;
     }
 }

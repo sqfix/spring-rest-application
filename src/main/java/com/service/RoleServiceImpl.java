@@ -2,7 +2,6 @@ package com.service;
 
 import com.dao.RoleRepository;
 import com.model.Role;
-import com.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Role getRoleById(int id) {
-        LOG.info("getRoleById (ROLES)");
-        return repository.getRoleById(id);
+        LOG.info("findRoleById (ROLES)");
+        return repository.findRoleById(id);
     }
 
     @Override
